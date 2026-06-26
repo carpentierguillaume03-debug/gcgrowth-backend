@@ -42,7 +42,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return apiError(res, 502, `Claude API error (${claudeRes.status}): ${err}`);
     }
 
-    const data = await claudeRes.json();
+    const data: any = await claudeRes.json();
     const html = data.content?.[0]?.text ?? '';
 
     return res.status(200).json({ html, type, usage: data.usage });

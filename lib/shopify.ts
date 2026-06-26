@@ -33,7 +33,7 @@ export async function getShopInfo(domain: string, token: string): Promise<{ name
     const body = await res.text();
     throw new Error(`Shopify auth failed (${res.status}): ${body}`);
   }
-  const data = await res.json();
+  const data: any = await res.json();
   return { name: data.shop.name, email: data.shop.email };
 }
 
@@ -52,7 +52,7 @@ export async function fetchOrders(
       headers: { 'X-Shopify-Access-Token': token }
     });
     if (!res.ok) throw new Error(`Shopify orders fetch failed (${res.status})`);
-    const data = await res.json();
+    const data: any = await res.json();
     orders.push(...(data.orders || []));
 
     // Handle cursor-based pagination
