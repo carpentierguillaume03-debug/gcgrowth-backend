@@ -1,0 +1,17 @@
+{
+  "name": "gcgrowthapi",
+  "version": "1.0.0",
+  "description": "GC Growth OS — Backend API (Vercel)",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.43.4",
+    "@anthropic-ai/sdk": "^0.24.3"
+  },
+  "devDependencies": {
+    "@vercel/node": "^3.0.0",
+    "typescript": "^5.4.5"
+  }
+}
